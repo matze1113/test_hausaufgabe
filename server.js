@@ -19,15 +19,6 @@ def game():
     else:
         return jsonify({'message': 'Sorry, your guess was incorrect. Try again.'}), 200
 
-def get_data_from_endpoint():
-    url = "http://example.com/api/data"  # Der URL des Endpunkts
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        return response.json()  # Gibt die Daten als Python-Objekt zurück
-    else:
-        return None
-
 if __name__ == '__main__':
     app.run(debug=True)
 # unnötiger kommentar
