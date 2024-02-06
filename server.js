@@ -3,8 +3,8 @@ import random
 
 app = Flask(__name__)
 
-# Generate a random number between 1 and 10
-correct_number = random.randint(1, 10)
+# Generate a random number between 1 and 20
+correct_number = random.randint(1, 20)
 
 @app.route('/game', methods=['GET'])
 def game():
