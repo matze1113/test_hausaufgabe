@@ -24,6 +24,10 @@ def game():
 def number():
     return jsonify({'number': correct_number}), 200
 
+@app.route('/main', methods=['GET'])
+def main():
+    return 'You have reached the main endpoint!', 200
+
     
 if __name__ == '__main__':
     app.run(debug=True)
