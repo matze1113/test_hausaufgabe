@@ -19,5 +19,11 @@ def game():
     else:
         return jsonify({'message': 'Sorry, your guess was incorrect. Try again.'}), 200
 
+
+@app.route('/number', methods=['GET'])
+def number():
+    return jsonify({'number': correct_number}), 200
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
