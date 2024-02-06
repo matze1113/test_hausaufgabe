@@ -3,8 +3,8 @@ import random
 
 app = Flask(__name__)
 
-# Generate a random number between 1 and 20
-correct_number = random.randint(1, 20)
+# Generate a random number between 1 and 10
+correct_number = random.randint(1, 10)
 
 @app.route('/game', methods=['GET'])
 def game():
@@ -19,15 +19,15 @@ def game():
     else:
         return jsonify({'message': 'Sorry, your guess was incorrect. Try again.'}), 200
 
+def get_data_from_endpoint():
+    url = "http://example.com/api/data"  # Der URL des Endpunkts
+    response = requests.get(url)
 
-@app.route('/number', methods=['GET'])
-def number():
-    return jsonify({'number': correct_number}), 200
+    if response.status_code == 200:
+        return response.json()  # Gibt die Daten als Python-Objekt zurück
+    else:
+        return None
 
-@app.route('/main', methods=['GET'])
-def main():
-    return 'You have reached the main endpoint!', 200
-
-    
 if __name__ == '__main__':
     app.run(debug=True)
+# unnötiger kommentar
